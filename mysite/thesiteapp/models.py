@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 class Post(models.Model):
     title = models.CharField(max_length=255)
 
+    post_tag = models.CharField(max_length=255, default="no tag")
+
     # CASCADE will delete all posts for users that no longer exist
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()

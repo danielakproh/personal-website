@@ -1,25 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+<!-- {%block title%} This is index.html {%endblock%} -->
+<!-- even when Jinga expressions are commented out they can still be evaluated.
+The above block tiltle line is still being executed. If no block title is provided here
+the block title in base.html (the page this file extends to) will be used.-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
 
-<h1>Post</h1>
 
 <body>
+
+
+    {%block content %}
+    <h1>Post</h1>
     <ul>
         {% for post in object_list %}
         <li>
-            <a href="{% url 'article-detail' post.pk%}"> Details</a>
-            {{ post.title }} - {{ post.author.first_name }} - {{post.author.last_name}} - {{post.author.email}} <br />
+            <a href="{% url 'article-detail' post.pk%}"> {{ post.title }} </a>
+            {{ post.author.first_name }} - {{post.author.last_name}} - {{post.author.email}} <br />
             {{ post.body}}
         </li>
         {%endfor%}
     </ul>
-
+    {%endblock%}
 </body>
 
 </html>
