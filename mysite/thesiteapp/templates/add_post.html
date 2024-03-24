@@ -9,6 +9,8 @@
 
     <form method="POST">
         {% csrf_token %}
+        <!-- as_p means every field is rendered as a <p> tag element in the final html. see below for another example-->
+        <!-- {{ form.as_div}} -->
         {{ form.as_p}}
         <button class="btn btn-secondary">post</button>
     </form>
