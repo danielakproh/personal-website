@@ -5,11 +5,12 @@ The above block tiltle line is still being executed. If no block title is provid
 the block title in base.html (the page this file extends to) will be used.-->
 
 
+{% include 'latexify/stylesheets.html' %}
 
 <body>
 
-
     {%block content %}
+    {% load latexify %}
     <h1>Post</h1>
     <ul>
         {% for post in object_list %}
@@ -17,10 +18,18 @@ the block title in base.html (the page this file extends to) will be used.-->
             <a href="{% url 'article-detail' post.pk%}"> {{ post.title }} </a>
             {{ post.author.first_name }} - {{post.author.last_name}} - {{post.author.email}} <br />
             {{ post.body}}
+
         </li>
+        {% latexify 'f(x) = \sqrt{\frac{x^2}{2}}' math_inline=True %}
         {%endfor%}
     </ul>
+
+    <a href="{% url 'latex_view'%}"> Math area </a>
+
+
+    {% include "latexify/scripts.html" %}
     {%endblock%}
+
 </body>
 
 </html>

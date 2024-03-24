@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="content-language" content="en">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'latexify/stylesheets.html' %}
+
+    <title>LaTeX.js Web Component Test</title>
+</head>
+
+<body>
+    {% load latexify %}
+
+    {% latexify 'f(x) = \sqrt{\frac{x^2}{2}}' math_inline=True %}
+
+
+
+
+
+
+    {% include "latexify/scripts.html" %}
+</body>
+
+</html>

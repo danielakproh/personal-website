@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from markdownx.models import MarkdownxField
+
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
@@ -13,3 +15,8 @@ class Post(models.Model):
 
     def __str__(self) -> str:
         return self.title + ' | ' + str(self.author)
+    
+
+
+class MyModel(models.Model):
+    myfield = MarkdownxField()
