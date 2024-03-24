@@ -17,9 +17,5 @@ class ArticleDetailView(DetailView):
 class AddPostView(CreateView):
     model = Post
     template_name = 'add_post.html'
-    fields = '__all__'
-
-class LatexView(ListView):
-    model = Post
-    template_name = 'latex_test.html'
-
+    # fields = '__all__' <-- this imports all of them
+    fields = ('title', 'post_tag') # this is from models.py. possible to display only a few with a tuples
