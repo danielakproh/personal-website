@@ -6,44 +6,10 @@ body {
     color: white;
 }
 
-.name {
-    /* font-size: 4rem; */
-    font-family: "Tiro Bangla", serif;
-    padding: 0;
-}
-
-.job {
-    padding: 0;
-}
-
-.job {
-    /* font-size: 2.5rem; */
-    color: gray;
-    font-style: italic;
-}
-
-.site-body {
-    /* padding: 0 25rem; */
-}
-
-.row>* {
-    padding: 0;
-}
-
-.navbar-brand {
-    color: white;
-}
-
-.profile-picture {
-    max-width: 90px;
-    border-radius: 50%;
-}
-
 .row {
-    border: 1px solid gray;
-    padding: 0;
+    background-color: violet;
 }
 
 .col {
-    border: 1px solid gray;
+    background-color: aqua;
 }
